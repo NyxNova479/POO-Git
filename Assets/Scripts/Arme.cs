@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Arme : MonoBehaviour,IDamager
+public class Arme : ItemRamassable,IDamager
 {
     // Les propriétés de ma classe
 
     // Qu'est-ce qui caractérise une arme?
-    // Nom, Degats
+
     private int id;
     private int degats;
     private float range;
@@ -17,6 +17,12 @@ public class Arme : MonoBehaviour,IDamager
     public float Range { get => range; set => range = value; }
 
 
+    public override void seFaireRamasser(IRamasser ramasser)
+    {
+        base.seFaireRamasser (ramasser);
+        Debug.Log(this + " : Equipe toi de moi " + ramasser);
+        ramasser.equiper(this);
+    }
 
     public Arme()
     {
@@ -35,18 +41,14 @@ public class Arme : MonoBehaviour,IDamager
     // Le fonctionnement de ma classe
 
     // Que peut faire une arme?
-    public void attaquer()
+    public virtual void attaquer()
     {
-
+        Debug.Log("J'attaque avec une arme");
     }
     public void faireDegat(IDamageable cible)
     {
 
     }
-    public virtual void Attaquer(Enemy enemy)
-    {
-        // l'attaque de toutes les armes
-        enemy.TakeDamage(Degats);
-    }
+
 
 }

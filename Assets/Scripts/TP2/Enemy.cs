@@ -1,6 +1,7 @@
 
 
 using TP2_Heritage;
+using TP3_Polymorphisme;
 using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
@@ -28,7 +29,7 @@ public abstract class Enemy : MonoBehaviour
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        Debug.Log(player);
+
     }
 
     void Update()
@@ -58,7 +59,7 @@ public abstract class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerCharacter2 player = collision.gameObject.GetComponent<PlayerCharacter2>();
+            PlayerCharacter player = collision.gameObject.GetComponent<PlayerCharacter>();
             if (player != null)
             {
                 player.TakeDamage(Damage);
