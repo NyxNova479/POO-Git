@@ -1,22 +1,22 @@
 using UnityEngine;
 
-public class Sword : Weapon
+public class Axe : Weapon
 {
     public override void Attack()
     {
-        base.Attack();
+
         // Logique d'attaque à l'épée
-        Debug.Log("Swinging sword");
+        Debug.Log("Swinging axe");
         // Animation, effets sonores, etc.
 
         // Détection des ennemis à proximité
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 2f);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 4f);
         foreach (var hitCollider in hitColliders)
         {
             Enemy enemy = hitCollider.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.TakeDamage(25);
+                enemy.TakeDamage(20);
             }
         }
     }

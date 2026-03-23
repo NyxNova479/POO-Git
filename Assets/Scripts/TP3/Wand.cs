@@ -5,6 +5,7 @@ public class Wand : Weapon
 {
     public override void Attack()
     {
+
         // Logique d'attaque à la baguette
         Debug.Log("Casting spell");
 

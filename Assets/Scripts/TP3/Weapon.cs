@@ -2,17 +2,25 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
-    private string currentWeapon;
+    private int id;
+    private string weaponName;
 
-    protected string CurrentWeapon { get => currentWeapon; set => currentWeapon = value; }
+    public Weapon()
+    {
+        this.id = 0;
+        this.weaponName = "Fists";
+    }
+    protected Weapon(int id, string weaponName)
+    {
+        this.id = id;
+        this.weaponName = weaponName;
+    }
 
     public virtual void Attack()
     {
-        Debug.Log("j'attaque");
+        Debug.Log("I attack");
     }
+  
 
-    public void SwitchWeapon(string weaponName)
-    {
-        CurrentWeapon = weaponName;
-    }
+
 }

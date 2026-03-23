@@ -13,6 +13,7 @@ namespace TP3_Polymorphisme
         [SerializeField] private int gold;
         [SerializeField] private float mana = 100f;
         [SerializeField] private float maxMana = 100f;
+        [SerializeField] private Weapon armeEquipee;
         private bool isInvincible;
         
         // Propriétés encapsulées avec validation
@@ -63,6 +64,7 @@ namespace TP3_Polymorphisme
         private void Start()
         {
             // Initialisation avec validation
+            armeEquipee = new Sword();
             Health = maxHealth;
             Mana = maxMana;
         }
@@ -81,6 +83,14 @@ namespace TP3_Polymorphisme
             {
                 Mana += 0.1f * Time.deltaTime;
             }
+            if ((Input.GetKeyDown(KeyCode.E)))
+            {
+                armeEquipee.Attack();
+            }
+            //if ((Input.GetKeyDown(KeyCode.R)))
+            //{
+            //    armeEquipee.Switch();
+            //}
         }
         
         // Méthodes publiques avec logique de validation

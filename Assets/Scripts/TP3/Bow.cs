@@ -4,6 +4,7 @@ public class Bow : Weapon
 {
     public override void Attack()
     {
+
         // Logique d'attaque à l'arc
         Debug.Log("Firing arrow");
 
