@@ -16,6 +16,8 @@ public class VehicleController : MonoBehaviour
     public float motorcycleLeanAngle;
     public float airplaneLift;
     public float boatBuoyancy;
+
+    private Vehicle vehicle;
     
     void Update()
     {

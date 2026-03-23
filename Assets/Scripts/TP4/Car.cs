@@ -1,9 +1,27 @@
 using UnityEngine;
 
-public class Car : Vehicule
+public class Car : Vehicle
 {
     private float carTraction;
-    protected override void ApplyTraction()
+
+
+    protected override void Move()
+    {
+        if (MoveInput > 0)
+        {
+            Speed += Acceleration * MoveInput * Time.deltaTime;
+            // Logique spécifique à la voiture
+            ApplyCarTraction();
+        }
+        else if (MoveInput < 0)
+        {
+            Speed -= BrakeForce * Mathf.Abs(MoveInput) * Time.deltaTime;
+        }
+
+        transform.Rotate(0, TurnInput * Handling * Speed * 0.05f * Time.deltaTime, 0);
+    }
+
+    private void ApplyCarTraction()
     {
         // Simuler la traction d'une voiture
         if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, 1.0f))
