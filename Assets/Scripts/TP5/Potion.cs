@@ -8,6 +8,10 @@ public class Potion : Items, IUsable
     private float duration;
 
 
+    public override void UseItem(Player user)
+    {
+        beUsed(user);
+    }
 
 
     public void beUsed(Player user)
@@ -16,7 +20,7 @@ public class Potion : Items, IUsable
         RestoreHealth(user.Health, user.MaxHealth);
     }
 
-    public void RestoreHealth(int health, int maxHealth)
+    private void RestoreHealth(int health, int maxHealth)
     {
         while (duration > 0)
         {
@@ -26,8 +30,4 @@ public class Potion : Items, IUsable
         System.Console.WriteLine($"{name} restaure {healthRestored} points de vie!");
     }
 
-    public override void UseItem(Player user)
-    {
-        beUsed(user);
-    }
 }

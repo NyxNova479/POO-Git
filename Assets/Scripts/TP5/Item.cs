@@ -6,7 +6,7 @@ public abstract class Items : MonoBehaviour
     private string description;
     private float weight;
     private int value;
-    private string itemType; // "Weapon", "Potion", "Armor", etc.
+
 
     public string ItName { get => itName; set => itName = value; }
     public string Description { get => description; set => description = value; }

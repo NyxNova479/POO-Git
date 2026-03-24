@@ -1,14 +1,14 @@
 using UnityEngine;
 public class Player : MonoBehaviour
 {
-    [SerializeField]private string playerName;
-    [SerializeField]private int health;
-    [SerializeField]private int maxHealth;
+    private string playerName;
+    private int health;
+    private int maxHealth;
 
 
-    IEquipable equippedHelmet;
-    IEquipable equippedChest;
-    IEquipable equippedBoots;
+    private IEquipable equippedHelmet;
+    private IEquipable equippedChest;
+    private IEquipable equippedBoots;
 
     public IEquipable EquippedHelmet { get => equippedHelmet; set => equippedHelmet = value; }
     public IEquipable EquippedChest { get => equippedChest; set => equippedChest = value; }
@@ -16,12 +16,12 @@ public class Player : MonoBehaviour
     public int Health { get => health; set => health = value; }
     public int MaxHealth { get => maxHealth; set => maxHealth = value; }
 
-    public void Attack(IUsable weapon)
+    private void Attack(IUsable weapon)
     {
         weapon.beUsed(this); 
     }
     
-    public void RestoreHealth(IUsable potion)
+    private void RestoreHealth(IUsable potion)
     {
 
         potion.beUsed(this);
