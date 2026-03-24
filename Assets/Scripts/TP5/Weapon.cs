@@ -4,17 +4,18 @@ public class Weapons : Items, IUsable
 {
 
     // Propriétés spécifiques aux armes
-    public int damage;
-    public float range;
+    private int damage;
+    private float range;
 
-
+    public int Damage { get => damage; set => damage = value; }
+    public float Range { get => range; set => range = value; }
 
     public void beUsed(IUser user)
     {
         Attack();
     }
 
-    public override void UseItem(IUser user)
+    public override void UseItem(Player user)
     {
         beUsed(user);
     }
@@ -22,7 +23,7 @@ public class Weapons : Items, IUsable
     private void Attack()
     {
         // Logique d'attaque avec l'arme équipée
-        System.Console.WriteLine($"{name} attaque pour {damage} points de dégâts!");
+        System.Console.WriteLine($"{name} attaque pour {Damage} points de dégâts!");
     }
 
 

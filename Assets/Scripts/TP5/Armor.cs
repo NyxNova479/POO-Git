@@ -4,35 +4,21 @@ public abstract class Armor : Items, IEquipable
 {
 
     // Propriétés spécifiques aux armures
-    public int defense;
-    public string armorType; // "Helmet", "Chest", "Boots", etc.
+    private int defense;
+    private string armorType; // "Helmet", "Chest", "Boots", etc.
 
+    public int Defense { get => defense; set => defense = value; }
 
-
-    public void beEquiped(IEquiper equiper)
+    public void beEquiped(Player player)
     {
-        EquipArmor();
+        EquipArmor(player);
     }
 
-    public override void UseItem()
+    public override void UseItem(Player player)
     {
         beEquiped(player);
     }
 
-    public void EquipArmor()
-    {
-        if (armorType == "Helmet")
-        {
-            equippedHelmet = armor;
-        }
-        else if (armor.armorType == "Chest")
-        {
-            equippedChest = armor;
-        }
-        else if (armor.armorType == "Boots")
-        {
-            equippedBoots = armor;
-        }
-    }
+    public abstract void EquipArmor(Player player);
 
 }

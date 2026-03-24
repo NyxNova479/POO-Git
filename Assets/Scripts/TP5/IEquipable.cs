@@ -2,5 +2,5 @@ using UnityEngine;
 
 public interface IEquipable 
 {
-    public void beEquiped(IEquiper equiper);
+    public void beEquiped(Player player);
 }

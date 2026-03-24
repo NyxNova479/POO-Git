@@ -1,50 +1,33 @@
 using UnityEngine;
-public class Player : IUser, IEquiper
+public class Player : MonoBehaviour
 {
-    [SerializeField]private string name;
+    [SerializeField]private string playerName;
     [SerializeField]private int health;
     [SerializeField]private int maxHealth;
-    
-    // L'inventaire est directement intégré dans la classe Player
-    private Inventory inventory = new Inventory();
-    
-    // Des références directes aux objets équipés
-    private IUsable equippedWeapon;
-    private IEquipable equippedHelmet;
-    private IEquipable equippedChest;
-    private IEquipable equippedBoots;
 
-    public string Name { get => name; set => name = value; }
-    public int Health { get => health; set => health = value; }
-    public int MaxHealth { get => maxHealth; set => maxHealth = value; }
-    public IUsable EquippedWeapon { get => equippedWeapon; set => equippedWeapon = value; }
+
+    IEquipable equippedHelmet;
+    IEquipable equippedChest;
+    IEquipable equippedBoots;
+
     public IEquipable EquippedHelmet { get => equippedHelmet; set => equippedHelmet = value; }
     public IEquipable EquippedChest { get => equippedChest; set => equippedChest = value; }
     public IEquipable EquippedBoots { get => equippedBoots; set => equippedBoots = value; }
 
-    public void Attack()
+    public void Attack(IUsable weapon)
     {
-        EquippedWeapon.beUsed(this); 
+        weapon.beUsed(this); 
     }
     
-    public void RestoreHealth(int amount)
+    public void RestoreHealth(IUsable potion)
     {
-        Health = System.Math.Min(Health + amount, MaxHealth);
-        System.Console.WriteLine($"{Name} restaure {amount} points de vie!");
+
+        potion.beUsed(this);
     }
     
-    public void EquipArmor(IEquipable armor)
+    private void EquipArmor(IEquipable armor)
     {
         armor.beEquiped(this);
     }
 
-    public void use()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void equip()
-    {
-        return;
-    }
 }

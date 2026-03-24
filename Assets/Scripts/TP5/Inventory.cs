@@ -1,11 +1,14 @@
+using NUnit.Framework;
+using System.Collections.Generic;
+
 public class Inventory
 {
-    private Items[] items = new Items[20]; // Taille fixe d'inventaire
+    private List<Items> items = new List<Items>();
     private int itemCount = 0;
     
-    public void AddItem(Item item)
+    public void AddItem(Items item)
     {
-        if (itemCount < items.Length)
+        if (itemCount < items.Count)
         {
             items[itemCount] = item;
             itemCount++;

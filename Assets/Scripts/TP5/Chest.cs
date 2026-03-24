@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class Chest : Armor
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void EquipArmor(Player player)
     {
-        
+        player.EquippedChest = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void UseItem(Player player)
     {
-        
+        EquipArmor(player);
     }
+
+
 }

@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class Boots : Armor
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void EquipArmor(Player player)
     {
-        
+        player.EquippedBoots = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void UseItem(Player player)
     {
-        
+        EquipArmor(player);
     }
+
+
 }

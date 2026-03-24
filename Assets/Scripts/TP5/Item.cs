@@ -8,10 +8,10 @@ public abstract class Items : MonoBehaviour
     private int value;
     private string itemType; // "Weapon", "Potion", "Armor", etc.
 
-    protected string ItName { get => itName; set => itName = value; }
-    protected string Description { get => description; set => description = value; }
-    protected float Weight { get => weight; set => weight = value; }
-    protected int Value { get => value; set => this.value = value; }
+    public string ItName { get => itName; set => itName = value; }
+    public string Description { get => description; set => description = value; }
+    public float Weight { get => weight; set => weight = value; }
+    public int Value { get => value; set => this.value = value; }
 
     protected Items()
     {
@@ -29,5 +29,5 @@ public abstract class Items : MonoBehaviour
         this.weight = weight;
         this.value = value;
     }
-    public abstract void UseItem(IUser player);
+    public abstract void UseItem(Player player);
 }
