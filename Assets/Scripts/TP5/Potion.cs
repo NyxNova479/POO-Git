@@ -17,7 +17,7 @@ public class Potion : Items, IUsable
     public void beUsed(Player user)
     {
 
-        RestoreHealth(user.Health, user.MaxHealth);
+        RestoreHealth(user.getHealth(), user.getMaxHealth());
     }
 
     private void RestoreHealth(int health, int maxHealth)

@@ -34,7 +34,7 @@ public class Inventory
         float totalWeight = 0;
         for (int i = 0; i < itemCount; i++)
         {
-            totalWeight += items[i].Weight;
+            totalWeight += items[i].getWeight();
         }
         return totalWeight;
     }

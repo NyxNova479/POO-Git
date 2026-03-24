@@ -7,11 +7,11 @@ public abstract class Items : MonoBehaviour
     private float weight;
     private int value;
 
+    public float getWeight()
+    {
+        return weight;
+    }
 
-    public string ItName { get => itName; set => itName = value; }
-    public string Description { get => description; set => description = value; }
-    public float Weight { get => weight; set => weight = value; }
-    public int Value { get => value; set => this.value = value; }
 
     protected Items()
     {
