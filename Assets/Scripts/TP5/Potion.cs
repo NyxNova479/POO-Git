@@ -13,10 +13,10 @@ public class Potion : Items, IUsable
     public void beUsed(Player user)
     {
 
-        RestoreHealth();
+        RestoreHealth(user.Health, user.MaxHealth);
     }
 
-    public void RestoreHealth()
+    public void RestoreHealth(int health, int maxHealth)
     {
         while (duration > 0)
         {

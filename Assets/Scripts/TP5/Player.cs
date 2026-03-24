@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     public IEquipable EquippedHelmet { get => equippedHelmet; set => equippedHelmet = value; }
     public IEquipable EquippedChest { get => equippedChest; set => equippedChest = value; }
     public IEquipable EquippedBoots { get => equippedBoots; set => equippedBoots = value; }
+    public int Health { get => health; set => health = value; }
+    public int MaxHealth { get => maxHealth; set => maxHealth = value; }
 
     public void Attack(IUsable weapon)
     {

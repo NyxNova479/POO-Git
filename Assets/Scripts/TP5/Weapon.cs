@@ -10,14 +10,15 @@ public class Weapons : Items, IUsable
     public int Damage { get => damage; set => damage = value; }
     public float Range { get => range; set => range = value; }
 
-    public void beUsed(IUser user)
+    public void beUsed(Player player)
     {
         Attack();
     }
 
-    public override void UseItem(Player user)
+
+    public override void UseItem(Player player)
     {
-        beUsed(user);
+        beUsed(player);
     }
 
     private void Attack()
