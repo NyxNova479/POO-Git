@@ -3,7 +3,22 @@ guid: 61559765286b5a94ab3c385c8fd9c9a4
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bow
+    second: {fileID: 2100000, guid: 4b110d7433f6e6c449c3f3853dac5fac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: clean arrow
+    second: {fileID: 2100000, guid: a37ba8cdb6403214b8a0379a6111db80, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dirty arrow
+    second: {fileID: 2100000, guid: d6286b3adba2bb64bb8a5b6948fa1930, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
